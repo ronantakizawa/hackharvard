@@ -3,13 +3,14 @@ import * as admin from 'firebase-admin';
 import fs from 'fs';
 import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
+const serviceAccountKeyPath = require('../../firebase-credentials');  // Adjust the path to match the location of credentials.js
+
 
 // Initialize Firebase Admin SDK
 if (!admin.apps.length) {
-  const serviceAccountKeyPath = path.resolve(process.cwd(), 'firebase-credentials.json');
-  const serviceAccountKey = JSON.parse(fs.readFileSync(serviceAccountKeyPath, 'utf8'));
+  //const serviceAccountKey = JSON.parse(fs.readFileSync(serviceAccountKeyPath, 'utf8'));
   admin.initializeApp({
-    credential: admin.credential.cert(serviceAccountKey),
+    credential: admin.credential.cert(serviceAccountKeyPath),
   //  databaseURL: 'https://your-project.firebaseio.com',
   });
 }

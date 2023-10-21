@@ -4,6 +4,8 @@ import { useAuthContext } from '../components/AuthContext';  // Adjust the impor
 import { useRouter } from 'next/router';
 import { doc, getDoc, getFirestore } from "firebase/firestore";  // Import Firestore functions
 
+
+
 const ProtectedPage: React.FC = () => {
   const { user } = useAuthContext();
   const router = useRouter();
