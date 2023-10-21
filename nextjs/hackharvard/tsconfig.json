@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/test.jsx", "pages/layout.jsx", "components/AuthContext.jsx", "components/AuthContext.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/test.jsx", "pages/layout.jsx", "components/AuthContext.tsx", "components/AuthContext.tsx", "pages/page.jsx"],
   "exclude": ["node_modules"]
 }
