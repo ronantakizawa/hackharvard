@@ -21,22 +21,59 @@ function Page() {
         console.log(result)
         return router.push("/admin")
     }
-    return (<div className="wrapper">
-        <div className="form-wrapper">
-            <h1 className="mt-60 mb-30">Sign up</h1>
-            <form onSubmit={handleForm} className="form">
-                <label htmlFor="email">
-                    <p>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
-                </label>
-                <label htmlFor="password">
-                    <p>Password</p>
-                    <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
-                </label>
-                <button type="submit">Sign up</button>
-            </form>
-        </div>
-    </div>);
+    //return (<div className="wrapper">
+    //    <div className="form-wrapper">
+
+    return (<div className="container">
+<form onSubmit = {handleForm} className="mt-4">
+  <h2 className="text-center mb-4">Create an Account</h2>
+  <div className="mb-3">
+    <label htmlFor="email" className="form-label">
+      Email Address
+    </label>
+
+    <input
+      onChange={(e) => setEmail(e.target.value)}
+      type="email"
+      className="form-control"
+      id="email"
+      placeholder="Enter your email"
+      required
+      autoComplete="email"
+    />
+  </div>
+  <div className="mb-3">
+    <label htmlFor="password" className="form-label">
+      Password
+    </label>
+    <div className="input-group">
+      <input
+        onChange={(e) => setPassword(e.target.value)}
+        type="password"
+        className="form-control"
+        id="password"
+        placeholder="Enter your password"
+        required
+        minLength={8}
+        autoComplete="new-password"
+      />
+    </div>
+    <small className="text-muted">
+      Password must be at least 8 characters.
+    </small>
+  </div>
+  <button type="submit" className="btn btn-primary btn-block">
+    Sign Up
+  </button>
+  <p className="mt-3 text-center">
+    <small>
+      Already have an account? <a href="/login">Log in</a>
+    </small>
+  </p>
+</form>
+
+
+</div>)
 }
 
 export default Page;
